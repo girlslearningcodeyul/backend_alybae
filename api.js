@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const fs = require('fs')
 
 app.use(bodyParser.raw({ type: "*/*" }))
-// HELLO asdasd
+
 let serverState = {
     accounts: []
 
