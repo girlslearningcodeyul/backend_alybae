@@ -14,8 +14,7 @@ function putItemsBought(userID, value) {
 }
 
 function getItemsBought(userID) {
-    var ret = itemsBought[userID];
-    return ret;
+    return itemsBought[userID];
 }
 
 
@@ -25,7 +24,7 @@ parameter: [uid] the UID of the user.
 returns: undefined
 */
 function initializeUserIfNeeded(uid) {
-    var items = getItemsBought[uid]; //does this user have any items?
+    var items = getItemsBought[uid];
     if(items == undefined) {
         putItemsBought(uid, []);
     }
@@ -42,7 +41,7 @@ function allItemsBought(buyerID) {
 
 /* 
 createListing adds a new listing to our global state.
-This function is incomplete. You need to complete it first!
+This function is incomplete. You need to complete it.
     parameters: 
       [sellerID] The ID of the seller
       [price] The price of the item
@@ -115,8 +114,6 @@ module.exports = {
     createListing,
     getItemDescription,
     buy,
-    allItemsSold,
-    allListings,
-    searchForListings
+    allItemsSold
     // Add all the other functions that need to be exported
 }

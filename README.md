@@ -1,3 +1,3 @@
 # Alibay backend
 
-backend_alybae
+Don't forget to npm install
