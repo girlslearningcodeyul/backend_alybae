@@ -9,7 +9,6 @@ app.use(bodyParser.raw({ type: "*/*" }))
 
 let serverState = {
    
-
 }
 
 //Ksenia's added code
@@ -62,7 +61,9 @@ app.get('/home', (req, res) => {
 
 //shows items sold by user
 app.get('/getItemsSold', (req, res) => {
-
+    let parsed = req.query.toString().split('=')
+    let userId = parsed[1]
+    res.send(JSON.stringify(alibay.allItemsSold(userId) ))
 })
 
 // app.get('/itemsBought', (req, res) => {

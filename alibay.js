@@ -2,7 +2,7 @@ const assert = require('assert');
 
 let itemsBought = {} // map that keeps track of all the items a user has bought
 
-let itemsSold = {}
+let itemsSold = {'ksenia': ['29384059454', '38293817283']} //JSON.parse('./itemsSold')
 
 let items = {
     '29384059454': {
@@ -10,7 +10,14 @@ let items = {
         price: 200,
         description: "furray like Bill Murray",
         name: "cat",
-        forSale: true //set to false when sold
+        forSale: false //set to false when sold
+    },
+    '38293817283':{
+        sellerId: 1,
+        price: 100,
+        description: "also like Bill Murray",
+        name: "kitten",
+        forSale: false //set to false when sold 
     }
 }
 
@@ -26,6 +33,7 @@ function genUID() {
 //user id connected to an array of item ids
 function putItemsBought(userID, value) {
     itemsBought[userID] = value;
+    //need to write to itemsBought
 }
 //shows items that that user has bought
 function getItemsBought(userID) {
@@ -108,9 +116,10 @@ function buy(buyerID, sellerID, listingID) {
 allItemsSold returns the IDs of all the items sold by a seller
     parameter: [sellerID] The ID of the seller
     returns: an array of listing IDs
-*///needs items sold map userid & itemid
+*/
+//when not hardcoded, check for items forSale property (false returns the sold items then)
 function allItemsSold(sellerID) {
-
+    return Object.values(itemsSold)
 }
 
 /*
