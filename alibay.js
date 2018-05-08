@@ -4,7 +4,12 @@ let itemsBought = {} // map that keeps track of all the items a user has bought
 
 let itemsSold = {}
 
-let items = {}
+let items = {'45678987654': {
+            sellerId: 11,
+            price: 10000,
+            description: "fat",
+            name: "cat"
+         }}
 
 //  example - let items = {
 //     '45678987654': {
@@ -14,8 +19,6 @@ let items = {}
 //         name: "cat"
 //     }
 // }
-
-
 
 
 /*
@@ -119,7 +122,7 @@ function allItemsSold(sellerID) {
 allListings returns the IDs of all the listings currently on the market
 Once an item is sold, it will not be returned by allListings
     returns: an array of listing IDs
-*///array of listing Ids
+*/
 function allListings() {
     return Object.keys(items)
 }
