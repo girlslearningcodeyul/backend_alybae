@@ -145,6 +145,7 @@ module.exports = {
     createListing,
     getItemDescription,
     buy,
-    allItemsSold
+    allItemsSold, 
+    allListings
     // Add all the other functions that need to be exported
 }
