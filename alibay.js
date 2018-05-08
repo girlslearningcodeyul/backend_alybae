@@ -119,7 +119,7 @@ allItemsSold returns the IDs of all the items sold by a seller
 */
 //when not hardcoded, check for items forSale property (false returns the sold items then)
 function allItemsSold(sellerID) {
-    return Object.values(itemsSold)
+    return Object.values(sellerID)
 }
 
 /*
