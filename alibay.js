@@ -9,21 +9,10 @@ let items = {
         sellerId: 0,
         price: 200,
         description: "furray like Bill Murray",
-        name: "cat"
+        name: "cat",
+        forSale: true //set to false when sold
     }
 }
-
-// let homeItems = {
-//     '29384059454': {
-//         sellerId: 0,
-//         price: 200,
-//         description: "furray like Bill Murray",
-//         name: "cat"
-//     },
-//     {
-//         ''
-//     }
-// }
 
 
 /*
@@ -92,8 +81,8 @@ getItemDescription returns the description of a listing
     parameter: [listingID] The ID of the listing
     returns: An object containing the price and blurb properties.
 */
-function getItemDescription() {
-
+function getItemDescription(itemId) {
+    return items[itemId]
 }
 
 /* 
@@ -128,8 +117,14 @@ allListings returns the IDs of all the listings currently on the market
 Once an item is sold, it will not be returned by allListings
     returns: an array of listing IDs
 */
-function allListings() {
-    return Object.keys(items)
+//filtering for boolean, returns items not sold as array of Ids
+function allItemIds() {
+    return Object.keys(items).filter((itemId) => items[itemId].forSale)
+}
+
+//returns an array of all items
+function allItems() {
+    return allItemIds().map(itemId => getItemDescription(itemId))
 }
 
 /*
@@ -151,6 +146,7 @@ module.exports = {
     getItemDescription,
     buy,
     allItemsSold,
-    allListings
+    allItemIds,
+    allItems
     // Add all the other functions that need to be exported
 }

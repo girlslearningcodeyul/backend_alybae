@@ -77,7 +77,7 @@ app.get('/getItemsBought', (req, res) => {
 
 //show all items to user
 app.get('/allItems', (req, res) => {
-    res.send(JSON.stringify(alibay.allListings()))
+    res.send(JSON.stringify(alibay.allItems()))
 })
 
 //search all items based on full string
