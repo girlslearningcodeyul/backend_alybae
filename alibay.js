@@ -10,14 +10,14 @@ let items = {
         price: 200,
         description: "furray like Bill Murray",
         name: "cat",
-        forSale: false //set to false when sold
+        forSale: true //set to false when sold
     },
     '38293817283':{
         sellerId: 1,
         price: 100,
         description: "also like Bill Murray",
         name: "kitten",
-        forSale: false //set to false when sold 
+        forSale: true //set to false when sold 
     }
 }
 
@@ -119,7 +119,7 @@ allItemsSold returns the IDs of all the items sold by a seller
 */
 //when not hardcoded, check for items forSale property (false returns the sold items then)
 function allItemsSold(sellerID) {
-    return Object.values(sellerID)
+    let items = Object.values(sellerID)
 }
 
 /*
