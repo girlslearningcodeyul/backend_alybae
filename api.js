@@ -61,7 +61,9 @@ app.get('/home', (req, res) => {
 })
 
 //shows items sold by user
-app.get('/getItemsSold')
+app.get('/getItemsSold', (req, res) => {
+
+})
 //TODO: integrate this with the items sold
 // app.get('/itemsBought', (req, res) => {
 //     let uid = req.query.uid;
@@ -69,13 +71,19 @@ app.get('/getItemsSold')
 // });
 
 //get items bought by user
-app.get('/getItemsBought')
+app.get('/getItemsBought', (req, res) => {
+
+})
 
 //show all items to user
-app.get('/allItems')
+app.get('/allItems', (req, res) => {
+
+})
 
 //search all items based on full string
-app.post('/search')
+app.post('/search', (req, res) => {
+
+})
 
 //this stores the new item created on the form on the create listing page,
 //and displays it to the all listings page
@@ -90,6 +98,8 @@ app.post('/newListing', (req, res) => {
 })
 
 //adds item to user account history, removes it from listings page
-app.get('/buyItem')
+app.get('/buyItem', (req, res) => {
+
+})
 
 app.listen(4000, () => console.log('Listening on port 4000!'))
