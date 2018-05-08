@@ -32,7 +32,7 @@ function genUID() {
 }
 //user id connected to an array of item ids
 function putItemsBought(userID, value) {
-    itemsBought[userID] = value;
+    itemsBought[userID] = itemsBought[userID].concat(value);
     //need to write to itemsBought
 }
 //shows items that that user has bought
@@ -133,7 +133,11 @@ function allItemIds() {
 
 //returns an array of all items
 function allItems() {
-    return allItemIds().map(itemId => getItemDescription(itemId))
+    return mapIdsToItems(allItemIds())
+}
+//go from an array of itm ids to an array of objects
+function mapIdsToItems(itemIds) {
+    return itemIds.map(itemId => getItemDescription(itemId));
 }
 
 /*
@@ -156,6 +160,7 @@ module.exports = {
     buy,
     allItemsSold,
     allItemIds,
-    allItems
+    allItems,
+    mapIdsToItems
     // Add all the other functions that need to be exported
 }

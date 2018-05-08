@@ -62,7 +62,8 @@ app.get('/home', (req, res) => {
 //shows items sold by user
 app.get('/getItemsSold', (req, res) => {
     let userId = req.query.userId
-    res.send(JSON.stringify(alibay.allItemsSold(userId) ))
+    let itemsSoldIds = alibay.allItemsSold(userId);
+    res.send(JSON.stringify(alibay.mapIdsToItems(itemsSoldIds)))
 })
 
 // app.get('/itemsBought', (req, res) => {
@@ -72,7 +73,8 @@ app.get('/getItemsSold', (req, res) => {
 
 //get items bought by user
 app.get('/getItemsBought', (req, res) => {
-
+    let userId = req.query.userId 
+    res.send(JSON.stringify(alibay.getItemsBought()))
 })
 
 //show all items to user
