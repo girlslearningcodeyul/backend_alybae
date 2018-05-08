@@ -4,19 +4,24 @@ let itemsBought = {} // map that keeps track of all the items a user has bought
 
 let itemsSold = {}
 
-let items = {'45678987654': {
-            sellerId: 11,
-            price: 10000,
-            description: "fat",
-            name: "cat"
-         }}
+let items = {
+    '29384059454': {
+        sellerId: 0,
+        price: 200,
+        description: "furray like Bill Murray",
+        name: "cat"
+    }
+}
 
-//  example - let items = {
-//     '45678987654': {
-//         sellerId: 11,
-//         price: 10000,
-//         description: "fat",
+// let homeItems = {
+//     '29384059454': {
+//         sellerId: 0,
+//         price: 200,
+//         description: "furray like Bill Murray",
 //         name: "cat"
+//     },
+//     {
+//         ''
 //     }
 // }
 
@@ -72,13 +77,13 @@ This function is incomplete. You need to complete it.
 */
 function createListing({ sellerId, price, description, name }) {
     let itemId = genUID();
-    items[itemId] = { 
+    items[itemId] = {
         sellerId: sellerId,
-        price: price, 
-        description: description, 
+        price: price,
+        description: description,
         name: name
-     }
-     return itemId;
+    }
+    return itemId;
     //return item ID
 }
 
@@ -145,6 +150,7 @@ module.exports = {
     createListing,
     getItemDescription,
     buy,
-    allItemsSold
+    allItemsSold,
+    allListings
     // Add all the other functions that need to be exported
 }

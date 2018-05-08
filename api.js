@@ -55,7 +55,7 @@ app.post('/login', (req, res) => {
         res.send(JSON.stringify("failure"));
 })
 
-//displays 4 - 5 items on home page
+//displays 4 items on home page
 app.get('/home', (req, res) => {
 
 })
