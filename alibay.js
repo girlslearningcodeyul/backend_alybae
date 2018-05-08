@@ -70,7 +70,8 @@ function createListing({ sellerId, price, description, name }) {
         sellerId: sellerId,
         price: price,
         description: description,
-        name: name
+        name: name,
+        forSale: true
     }
     return itemId;
     //return item ID
