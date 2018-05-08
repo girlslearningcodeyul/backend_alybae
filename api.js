@@ -64,7 +64,7 @@ app.get('/home', (req, res) => {
 app.get('/getItemsSold', (req, res) => {
 
 })
-//TODO: integrate this with the items sold
+
 // app.get('/itemsBought', (req, res) => {
 //     let uid = req.query.uid;
 //     res.send(JSON.stringify(alibay.getItemsBought(uid)));
@@ -77,7 +77,7 @@ app.get('/getItemsBought', (req, res) => {
 
 //show all items to user
 app.get('/allItems', (req, res) => {
-
+    res.send(JSON.stringify(alibay.allListings()))
 })
 
 //search all items based on full string

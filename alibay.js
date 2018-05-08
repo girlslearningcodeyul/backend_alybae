@@ -91,7 +91,7 @@ function getItemDescription() {
 /* 
 buy changes the global state.
 Another buyer will not be able to purchase that listing
-The listing will no longer appear in search results
+The listing will no longer appear in search results 
 The buyer will see the listing in his history of purchases
 The seller will see the listing in his history of items sold
     parameters: 
@@ -100,6 +100,7 @@ The seller will see the listing in his history of items sold
      [listingID] The ID of listing
     returns: undefined
 */
+//remove item from items object, move it to itemsSold
 function buy(buyerID, sellerID, listingID) {
 
 }
@@ -120,7 +121,7 @@ Once an item is sold, it will not be returned by allListings
     returns: an array of listing IDs
 *///array of listing Ids
 function allListings() {
-
+    return Object.keys(items)
 }
 
 /*
