@@ -18,7 +18,7 @@ let sessionInfo = {}; //store session IDs in the sessionInfo class
 let info = {}; //store the accounts here
 
 try {
-    info = JSON.parse(fs.readFileSync('../data/info.json').toString());//JSON.parse to turn into a javascript object
+    info = JSON.parse(fs.readFileSync('data/info.json').toString());//JSON.parse to turn into a javascript object
 } catch (err) {
 }
 
@@ -36,7 +36,7 @@ app.post('/createAccount', (req, res) => {
     let sessionID = Math.floor(Math.random() * 10000000);
     sessionInfo[sessionID] = username;
     info[username] = password; //additing username and password to the associative map and storing it
-    fs.writeFileSync('../data/info.json', JSON.stringify(info)); //write to file whenever the file changes
+    fs.writeFileSync('data/info.json', JSON.stringify(info)); //write to file whenever the file changes
     res.send(JSON.stringify({ username, password, sessionID }));
 })
 
@@ -77,7 +77,7 @@ app.get('/getItemsBought', (req, res) => {
 
 //show all items to user
 app.get('/allItems', (req, res) => {
-    res.send(JSON.stringify(alibay.allListings()))
+    res.send(JSON.stringify(alibay.allItems()))
 })
 
 //search all items based on full string
