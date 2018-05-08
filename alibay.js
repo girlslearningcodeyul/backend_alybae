@@ -6,14 +6,14 @@ let itemsSold = {'ksenia': ['29384059454', '38293817283']} //JSON.parse('./items
 
 let items = {
     '29384059454': {
-        sellerId: 0,
+        sellerId: 'ksenia',
         price: 200,
         description: "furray like Bill Murray",
         name: "cat",
         forSale: true //set to false when sold
     },
     '38293817283':{
-        sellerId: 1,
+        sellerId: 'ksenia',
         price: 100,
         description: "also like Bill Murray",
         name: "kitten",
@@ -119,14 +119,13 @@ allItemsSold returns the IDs of all the items sold by a seller
 */
 //when not hardcoded, check for items forSale property (false returns the sold items then)
 function allItemsSold(sellerID) {
-    let items = Object.values(sellerID)
+    return itemsSold[sellerID];
 }
 
-/*
-allListings returns the IDs of all the listings currently on the market
-Once an item is sold, it will not be returned by allListings
-    returns: an array of listing IDs
-*/
+// allListings returns the IDs of all the listings currently on the market
+// Once an item is sold, it will not be returned by allListings
+//     returns: an array of listing IDs
+
 //filtering for boolean, returns items not sold as array of Ids
 function allItemIds() {
     return Object.keys(items).filter((itemId) => items[itemId].forSale)
