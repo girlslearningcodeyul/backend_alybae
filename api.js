@@ -8,7 +8,7 @@ const fs = require('fs')
 app.use(bodyParser.raw({ type: "*/*" }))
 
 let serverState = {
-    accounts: []
+   
 
 }
 
@@ -31,6 +31,8 @@ app.post('/createAccount', (req, res) => {
     if (info[username]) {
         return res.send(JSON.stringify('account already exists'));
     }
+
+
     let sessionID = Math.floor(Math.random() * 10000000);
     sessionInfo[sessionID] = username;
     info[username] = password; //additing username and password to the associative map and storing it
@@ -53,7 +55,7 @@ app.post('/login', (req, res) => {
         res.send(JSON.stringify("failure"));
 })
 
-//displays 4 - 5 items on home page
+//displays 4 items on home page
 app.get('/home', (req, res) => {
 
 })
@@ -62,7 +64,7 @@ app.get('/home', (req, res) => {
 app.get('/getItemsSold', (req, res) => {
 
 })
-//TODO: integrate this with the items sold
+
 // app.get('/itemsBought', (req, res) => {
 //     let uid = req.query.uid;
 //     res.send(JSON.stringify(alibay.getItemsBought(uid)));
@@ -75,7 +77,7 @@ app.get('/getItemsBought', (req, res) => {
 
 //show all items to user
 app.get('/allItems', (req, res) => {
-
+    res.send(JSON.stringify(alibay.allListings()))
 })
 
 //search all items based on full string
@@ -86,7 +88,13 @@ app.post('/search', (req, res) => {
 //this stores the new item created on the form on the create listing page,
 //and displays it to the all listings page
 app.post('/newListing', (req, res) => {
-
+    let parsed = JSON.parse(req.body.toString());
+    if(parsed !== undefined){
+        res.send(JSON.stringify(alibay.createListing(parsed)));
+    }else{
+        res.send({"success": false, "reason": "not all params met"})
+    }
+    
 })
 
 //adds item to user account history, removes it from listings page

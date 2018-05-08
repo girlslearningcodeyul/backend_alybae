@@ -4,15 +4,36 @@ let itemsBought = {} // map that keeps track of all the items a user has bought
 
 let itemsSold = {}
 
-let items = {}
+let items = {
+    '29384059454': {
+        sellerId: 0,
+        price: 200,        description: "furray like Bill Murray",
+        name: "cat"
+    }
+}
+
+
+// let homeItems = {
+//     '29384059454': {
+//         sellerId: 0,
+//         price: 200,
+//         description: "furray like Bill Murray",
+//         name: "cat"
+//     },
+//     {
+//         ''
+//     }
+// }
+
 
 /*
 Before implementing the login functionality, use this function to generate a new UID every time.
-*/ 
-//no longer needed, login instead
-// function genUID() {
-//     return Math.floor(Math.random() * 100000000)
-// }
+*/
+
+//item IDs
+function genUID() {
+    return Math.floor(Math.random() * 100000000)
+}
 //user id connected to an array of item ids
 function putItemsBought(userID, value) {
     itemsBought[userID] = value;
@@ -31,7 +52,7 @@ returns: undefined
 //if buyer never bought anything assigns empty array
 function initializeUserIfNeeded(uid) {
     var items = getItemsBought(uid);
-    if(items == undefined) {
+    if (items == undefined) {
         putItemsBought(uid, []);
     }
 }
@@ -54,8 +75,16 @@ This function is incomplete. You need to complete it.
       [blurb] A blurb describing the item
     returns: The ID of the new listing
 */
-function createListing(sellerID, price, blurb) {
-    
+function createListing({ sellerId, price, description, name }) {
+    let itemId = genUID();
+    items[itemId] = {
+        sellerId: sellerId,
+        price: price,
+        description: description,
+        name: name
+    }
+    return itemId;
+    //return item ID
 }
 
 /* 
@@ -64,13 +93,13 @@ getItemDescription returns the description of a listing
     returns: An object containing the price and blurb properties.
 */
 function getItemDescription() {
-    
+
 }
 
 /* 
 buy changes the global state.
 Another buyer will not be able to purchase that listing
-The listing will no longer appear in search results
+The listing will no longer appear in search results 
 The buyer will see the listing in his history of purchases
 The seller will see the listing in his history of items sold
     parameters: 
@@ -79,8 +108,9 @@ The seller will see the listing in his history of items sold
      [listingID] The ID of listing
     returns: undefined
 */
+//remove item from items object, move it to itemsSold
 function buy(buyerID, sellerID, listingID) {
-    
+
 }
 
 
@@ -90,16 +120,16 @@ allItemsSold returns the IDs of all the items sold by a seller
     returns: an array of listing IDs
 *///needs items sold map userid & itemid
 function allItemsSold(sellerID) {
-    
+
 }
 
 /*
 allListings returns the IDs of all the listings currently on the market
 Once an item is sold, it will not be returned by allListings
     returns: an array of listing IDs
-*///array of listing Ids
+*/
 function allListings() {
-    
+    return Object.keys(items)
 }
 
 /*
@@ -109,16 +139,18 @@ Once an item is sold, it will not be returned by searchForListings
     returns: an array of listing IDs
 */
 function searchForListings(searchTerm) {
-    
+
 }
 
 module.exports = {
+    // This is just a shorthand. It's the same as genUID: genUID. 
     initializeUserIfNeeded,
     putItemsBought,
     getItemsBought,
     createListing,
     getItemDescription,
     buy,
-    allItemsSold
+    allItemsSold,
+    allListings
     // Add all the other functions that need to be exported
 }
