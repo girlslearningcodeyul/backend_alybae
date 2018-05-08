@@ -61,8 +61,7 @@ app.get('/home', (req, res) => {
 
 //shows items sold by user
 app.get('/getItemsSold', (req, res) => {
-    let parsed = req.query.toString().split('=')
-    let userId = parsed[1]
+    let userId = req.query.userId
     res.send(JSON.stringify(alibay.allItemsSold(userId) ))
 })
 

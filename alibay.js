@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-let itemsBought = {} // map that keeps track of all the items a user has bought
+let itemsBought = {'aly': ['3748372637', '4536271829']};
 
 let itemsSold = {'ksenia': ['29384059454', '38293817283']} //JSON.parse('./itemsSold')
 
