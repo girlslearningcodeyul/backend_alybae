@@ -6,13 +6,26 @@ let itemsSold = {}
 
 let items = {}
 
+//  example - let items = {
+//     '45678987654': {
+//         sellerId: 11,
+//         price: 10000,
+//         description: "fat",
+//         name: "cat"
+//     }
+// }
+
+
+
+
 /*
 Before implementing the login functionality, use this function to generate a new UID every time.
-*/ 
-//no longer needed, login instead
-// function genUID() {
-//     return Math.floor(Math.random() * 100000000)
-// }
+*/
+
+//item IDs
+function genUID() {
+    return Math.floor(Math.random() * 100000000)
+}
 //user id connected to an array of item ids
 function putItemsBought(userID, value) {
     itemsBought[userID] = value;
@@ -31,7 +44,7 @@ returns: undefined
 //if buyer never bought anything assigns empty array
 function initializeUserIfNeeded(uid) {
     var items = getItemsBought(uid);
-    if(items == undefined) {
+    if (items == undefined) {
         putItemsBought(uid, []);
     }
 }
@@ -54,8 +67,16 @@ This function is incomplete. You need to complete it.
       [blurb] A blurb describing the item
     returns: The ID of the new listing
 */
-function createListing(sellerID, price, blurb) {
-    
+function createListing({ sellerId, price, description, name }) {
+    let itemId = genUID();
+    items[itemId] = { 
+        sellerId: sellerId,
+        price: price, 
+        description: description, 
+        name: name
+     }
+     return itemId;
+    //return item ID
 }
 
 /* 
@@ -64,7 +85,7 @@ getItemDescription returns the description of a listing
     returns: An object containing the price and blurb properties.
 */
 function getItemDescription() {
-    
+
 }
 
 /* 
@@ -80,7 +101,7 @@ The seller will see the listing in his history of items sold
     returns: undefined
 */
 function buy(buyerID, sellerID, listingID) {
-    
+
 }
 
 
@@ -90,7 +111,7 @@ allItemsSold returns the IDs of all the items sold by a seller
     returns: an array of listing IDs
 *///needs items sold map userid & itemid
 function allItemsSold(sellerID) {
-    
+
 }
 
 /*
@@ -99,7 +120,7 @@ Once an item is sold, it will not be returned by allListings
     returns: an array of listing IDs
 *///array of listing Ids
 function allListings() {
-    
+
 }
 
 /*
@@ -109,11 +130,11 @@ Once an item is sold, it will not be returned by searchForListings
     returns: an array of listing IDs
 */
 function searchForListings(searchTerm) {
-    
+
 }
 
 module.exports = {
-    genUID, // This is just a shorthand. It's the same as genUID: genUID. 
+    // This is just a shorthand. It's the same as genUID: genUID. 
     initializeUserIfNeeded,
     putItemsBought,
     getItemsBought,
