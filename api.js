@@ -82,10 +82,6 @@ app.get('/allItems', (req, res) => {
     res.send(JSON.stringify(alibay.allItems()))
 })
 
-//search all items based on full string
-app.post('/search', (req, res) => {
-
-})
 
 //this stores the new item created on the form on the create listing page,
 //and displays it to the all listings page

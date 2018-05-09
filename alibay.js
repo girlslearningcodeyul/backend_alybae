@@ -139,8 +139,12 @@ The seller will see the listing in his history of items sold
     returns: undefined
 */
 //remove item from items object, move it to itemsSold
-function buy(buyerID, sellerID, listingID) {
 
+//TODO:
+function buy(itemID, buyerID) {
+    let boughItem = itemID
+    items[itemID].forSale = false;
+    
 }
 
 
@@ -173,7 +177,8 @@ function mapIdsToItems(itemIds) {
 }
 
 function randomHomeItems() {
-    let itemsArray = Object.values(items);
+    let soldItems = allItems()
+    let itemsArray = Object.values(soldItems);
     let numbersMap = {};
     let randomNumber = Math.floor(Math.random() * itemsArray.length);
     let ret = []
