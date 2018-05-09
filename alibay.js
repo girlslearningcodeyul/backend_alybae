@@ -177,8 +177,8 @@ function mapIdsToItems(itemIds) {
 }
 
 function randomHomeItems() {
-    let soldItems = allItems()
-    let itemsArray = Object.values(soldItems);
+    let itemsArray = allItems()
+    // let itemsArray = Object.values(items);
     let numbersMap = {};
     let randomNumber = Math.floor(Math.random() * itemsArray.length);
     let ret = []
