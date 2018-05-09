@@ -70,7 +70,8 @@ app.get('/getItemsSold', (req, res) => {
 //get items bought by user
 app.get('/getItemsBought', (req, res) => {
     let userId = req.query.userId 
-    res.send(JSON.stringify(alibay.getItemsBought()))
+    let itemsBoughtIds = alibay.getItemsBought(userId)
+    res.send(JSON.stringify(mapIdsToItems(itemsBoughtIds)))
 })
 
 //show all items to user
