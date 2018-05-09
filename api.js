@@ -55,6 +55,12 @@ app.post('/login', (req, res) => {
     else
         res.send(JSON.stringify("failure"));
 })
+//TODO:
+app.get('/getItemDetails', (req, res) => {
+    let itemId = req.query.itemId
+    let itemDetails = alibay.getItemDescription(itemId)
+    res.send(JSON.stringify(itemDetails))
+})
 
 //displays 4 items on home page
 app.get('/home', (req, res) => {
@@ -96,6 +102,7 @@ app.post('/newListing', (req, res) => {
 })
 
 //adds item to user account history, removes it from listings page
+//TODO:
 app.get('/buyItem', (req, res) => {
 
 })
