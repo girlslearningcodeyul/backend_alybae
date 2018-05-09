@@ -55,10 +55,14 @@ function genUID() {
     return Math.floor(Math.random() * 100000000)
 }
 //user id connected to an array of item ids
-function putItemsBought(userID, value) {
-    itemsBought[userID] = itemsBought[userID].concat(value);
+function putItemsBought(userID, items) {
+    itemsBought[userID] = items
     //need to write to itemsBought
 }
+function putItemsSold(userID, items) {
+    itemsSold[userID] = items
+}
+
 //shows items that that user has bought
 function getItemsBought(userID) {
     return itemsBought[userID];
@@ -73,8 +77,12 @@ returns: undefined
 //if buyer never bought anything assigns empty array
 function initializeUserIfNeeded(uid) {
     var items = getItemsBought(uid);
+    var itemsSold = allItemsSold(uid)
     if (items == undefined) {
         putItemsBought(uid, []);
+    }
+    if(itemsSold == undefined) {
+        putItemsSold(uid, []);
     }
 }
 

@@ -35,6 +35,7 @@ app.post('/createAccount', (req, res) => {
     let sessionID = Math.floor(Math.random() * 10000000);
     sessionInfo[sessionID] = username;
     info[username] = password; //additing username and password to the associative map and storing it
+    alibay.initializeUserIfNeeded(username)
     fs.writeFileSync('data/info.json', JSON.stringify(info)); //write to file whenever the file changes
     res.send(JSON.stringify({ username, password, sessionID }));
 })
@@ -48,6 +49,7 @@ app.post('/login', (req, res) => {
     let sessionID = Math.floor(Math.random() * 10000000); //generate session ID only at login
     if (info[username] === password) { //checks whether the password for the user matches the entered password
         sessionInfo[sessionID] = username;
+        alibay.initializeUserIfNeeded(username)
         res.send(JSON.stringify({ sessionID, username }));
     }
     else
