@@ -17,7 +17,7 @@ function test() {
 
     let allSold = alibay.allItemsSold(sellerID)
     let soldDescriptions = allSold.map(alibay.getItemDescription)
-    let allBought = alibay.allItemsBought(buyerID)
+    // let allBought = alibay.allItemsBought(buyerID)
     let allBoughtDescriptions = allBought.map(getItemDescription)
     let listings =  allListings()
     let boatListings = searchForListings("boat")

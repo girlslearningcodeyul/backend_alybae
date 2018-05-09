@@ -66,10 +66,6 @@ app.get('/getItemsSold', (req, res) => {
     res.send(JSON.stringify(alibay.mapIdsToItems(itemsSoldIds)))
 })
 
-// app.get('/itemsBought', (req, res) => {
-//     let uid = req.query.uid;
-//     res.send(JSON.stringify(alibay.getItemsBought(uid)));
-// });
 
 //get items bought by user
 app.get('/getItemsBought', (req, res) => {
