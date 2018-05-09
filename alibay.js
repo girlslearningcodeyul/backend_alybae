@@ -151,7 +151,7 @@ The seller will see the listing in his history of items sold
      [listingID] The ID of listing
     returns: undefined
 */
-//change forSale boolean
+//change forSale boolea
 //change the sellerId
 //add to itemsBought and itemsSold
 
