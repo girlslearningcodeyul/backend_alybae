@@ -18,6 +18,22 @@ let items = {
         description: "also like Bill Murray",
         name: "kitten",
         forSale: true //set to false when sold 
+    },
+    '3748372637':
+    {
+        sellerId: 'aly',
+        price: 4,
+        description: "very cold",
+        name: "ice cubes",
+        forSale: true //set to false when sold 
+    },
+    '4536271829':
+    {
+        sellerId: 'aly',
+        price: 90000,
+        description: "less cold",
+        name: "ice cubes shaped like dolphins",
+        forSale: true //set to false when sold  
     }
 }
 
