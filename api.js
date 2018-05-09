@@ -104,9 +104,8 @@ app.post('/newListing', (req, res) => {
 //adds item to user account history, removes it from listings page
 //TODO:
 app.get('/buyItem', (req, res) => {
-    let itemAndBuyer = req.query.itemId.split('&')
-    let itemId = itemAndBuyer[0]
-    let buyerId = itemAndBuyer[1]
+    let itemId = req.query.itemId
+    let buyerId = req.query.buyerId
     let buyIt = alibay.buy(itemId, buyerId)
     res.send(JSON.stringify(buyIt))
 })
