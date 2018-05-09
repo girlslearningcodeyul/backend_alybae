@@ -11,7 +11,8 @@ let items = {
         price: 200,
         description: "furray like Bill Murray",
         name: "cat",
-        forSale: true //set to false when sold
+        forSale: true, //set to false when sold
+        itemId: 29384059454
     },
     '38293817283': {
 
@@ -19,7 +20,8 @@ let items = {
         price: 100,
         description: "also like Bill Murray",
         name: "kitten",
-        forSale: true //set to false when sold 
+        forSale: true, //set to false when sold 
+        itemId: '38293817283'
     },
     '3748372637': {
 
@@ -27,7 +29,8 @@ let items = {
         price: 4,
         description: "very cold",
         name: "ice cubes",
-        forSale: true //set to false when sold 
+        forSale: true, //set to false when sold 
+        itemId: '3748372637'
     },
     '4536271829': {
 
@@ -35,7 +38,8 @@ let items = {
         price: 90000,
         description: "less cold",
         name: "ice cubes shaped like dolphins",
-        forSale: true //set to false when sold  
+        forSale: true, //set to false when sold  
+        itemId: '4536271829'
     },
     '574839827': {
 
@@ -43,7 +47,8 @@ let items = {
         price: 90,
         description: "so nice",
         name: "mint",
-        forSale: true //set to false when sold 
+        forSale: true, //set to false when sold 
+        itemId: '574839827'
     }
 }
 
@@ -113,7 +118,9 @@ function createListing({ sellerId, price, description, name }) {
         price: price,
         description: description,
         name: name,
-        forSale: true
+        forSale: true,
+        itemId: itemId
+
     }
     return itemId;
     //return item ID
@@ -127,6 +134,10 @@ getItemDescription returns the description of a listing
 function getItemDescription(itemId) {
     return items[itemId]
 }
+//trying for a function that returns item description and it's Id
+// function getItemDescAndKey(itemId){
+//     return items[itemId] + itemId
+// }
 
 /* 
 buy changes the global state.
@@ -147,9 +158,10 @@ The seller will see the listing in his history of items sold
 //TODO:
 function buy(itemId, buyerId) {
     items[itemId].forSale = false;
-    items[itemId].sellerId = buyerId;
-    // itemsBought[]
-    // itemsSold[]
+    items[itemId].sellerId = '';
+    // itemsBought.buyerId[itemId]
+    // itemsSold.buyerId[itemId]
+    return "success"
 
 }
 
@@ -204,9 +216,7 @@ Once an item is sold, it will not be returned by searchForListings
     returns: an array of listing IDs
 */
 //all done on front end
-// function searchForListings(searchTerm) {
 
-// }
 
 module.exports = {
     // This is just a shorthand. It's the same as genUID: genUID. 
