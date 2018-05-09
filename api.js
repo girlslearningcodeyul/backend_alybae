@@ -55,11 +55,11 @@ app.post('/login', (req, res) => {
     else
         res.send(JSON.stringify("failure"));
 })
-//TODO:
+
 app.get('/getItemDetails', (req, res) => {
     let itemId = req.query.itemId
     let itemDetails = alibay.getItemDescription(itemId)
-    res.send(JSON.stringify(itemDetails))
+    res.send(JSON.stringify(itemDetails, itemId))
 })
 
 //displays 4 items on home page
@@ -104,7 +104,11 @@ app.post('/newListing', (req, res) => {
 //adds item to user account history, removes it from listings page
 //TODO:
 app.get('/buyItem', (req, res) => {
-
+    let itemAndBuyer = req.query.itemId.split('&')
+    let itemId = itemAndBuyer[0]
+    let buyerId = itemAndBuyer[1]
+    let buyIt = alibay.buy(itemId, buyerId)
+    res.send(JSON.stringify(buyIt))
 })
 
 app.listen(4000, () => console.log('Listening on port 4000!'))

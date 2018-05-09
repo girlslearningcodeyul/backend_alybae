@@ -6,6 +6,7 @@ let itemsSold = { 'ksenia': ['29384059454', '38293817283'] } //JSON.parse('./ite
 
 let items = {
     '29384059454': {
+
         sellerId: 'ksenia',
         price: 200,
         description: "furray like Bill Murray",
@@ -13,36 +14,37 @@ let items = {
         forSale: true //set to false when sold
     },
     '38293817283': {
+
         sellerId: 'ksenia',
         price: 100,
         description: "also like Bill Murray",
         name: "kitten",
         forSale: true //set to false when sold 
     },
-    '3748372637':
-        {
-            sellerId: 'aly',
-            price: 4,
-            description: "very cold",
-            name: "ice cubes",
-            forSale: true //set to false when sold 
-        },
-    '4536271829':
-        {
-            sellerId: 'aly',
-            price: 90000,
-            description: "less cold",
-            name: "ice cubes shaped like dolphins",
-            forSale: true //set to false when sold  
-        },
-    '574839827':
-        {
-            sellerId: 'ksenia',
-            price: 90,
-            description: "so nice",
-            name: "mint",
-            forSale: true //set to false when sold 
-        }
+    '3748372637': {
+
+        sellerId: 'aly',
+        price: 4,
+        description: "very cold",
+        name: "ice cubes",
+        forSale: true //set to false when sold 
+    },
+    '4536271829': {
+
+        sellerId: 'aly',
+        price: 90000,
+        description: "less cold",
+        name: "ice cubes shaped like dolphins",
+        forSale: true //set to false when sold  
+    },
+    '574839827': {
+
+        sellerId: 'ksenia',
+        price: 90,
+        description: "so nice",
+        name: "mint",
+        forSale: true //set to false when sold 
+    }
 }
 
 
@@ -55,17 +57,17 @@ function genUID() {
     return Math.floor(Math.random() * 100000000)
 }
 //user id connected to an array of item ids
-function putItemsBought(userID, items) {
-    itemsBought[userID] = items
+function putItemsBought(userId, items) {
+    itemsBought[userId] = items
     //need to write to itemsBought
 }
-function putItemsSold(userID, items) {
-    itemsSold[userID] = items
+function putItemsSold(userId, items) {
+    itemsSold[userId] = items
 }
 
 //shows items that that user has bought
-function getItemsBought(userID) {
-    return itemsBought[userID];
+function getItemsBought(userId) {
+    return itemsBought[userId];
 }
 
 
@@ -138,13 +140,17 @@ The seller will see the listing in his history of items sold
      [listingID] The ID of listing
     returns: undefined
 */
-//remove item from items object, move it to itemsSold
+//change forSale boolean
+//change the sellerId
+//add to itemsBought and itemsSold
 
 //TODO:
-function buy(itemID, buyerID) {
-    let boughItem = itemID
-    items[itemID].forSale = false;
-    
+function buy(itemId, buyerId) {
+    items[itemId].forSale = false;
+    items[itemId].sellerId = buyerId;
+    // itemsBought[]
+    // itemsSold[]
+
 }
 
 
@@ -181,10 +187,10 @@ function randomHomeItems() {
     let numbersMap = {};
     let randomNumber = Math.floor(Math.random() * itemsArray.length);
     let ret = []
-    if(itemsArray.length < 4) return itemsArray;
+    if (itemsArray.length < 4) return itemsArray;
 
     for (let i = 0; i < 4; i++) {
-        while(numbersMap[randomNumber]) randomNumber = Math.floor(Math.random() * itemsArray.length);
+        while (numbersMap[randomNumber]) randomNumber = Math.floor(Math.random() * itemsArray.length);
         numbersMap[randomNumber] = true;
         ret.push(itemsArray[randomNumber]);
     }
