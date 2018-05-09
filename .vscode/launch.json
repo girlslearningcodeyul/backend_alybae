@@ -6,7 +6,7 @@
            "request": "launch",
            "name": "nodemon",
            "runtimeExecutable": "nodemon",
-           "program": "${workspaceFolder}/test.js",
+           "program": "${workspaceFolder}/api.js",
            "restart": true,
            "console": "integratedTerminal",
            "internalConsoleOptions": "neverOpen"

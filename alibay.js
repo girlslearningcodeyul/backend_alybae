@@ -1,8 +1,8 @@
 const assert = require('assert');
 
-let itemsBought = {'aly': ['3748372637', '4536271829'], 'ksenia': ['574839827']}
+let itemsBought = { 'aly': ['3748372637', '4536271829'], 'ksenia': ['574839827'] }
 
-let itemsSold = {'ksenia': ['29384059454', '38293817283']} //JSON.parse('./itemsSold')
+let itemsSold = { 'ksenia': ['29384059454', '38293817283'] } //JSON.parse('./itemsSold')
 
 let items = {
     '29384059454': {
@@ -12,7 +12,7 @@ let items = {
         name: "cat",
         forSale: true //set to false when sold
     },
-    '38293817283':{
+    '38293817283': {
         sellerId: 'ksenia',
         price: 100,
         description: "also like Bill Murray",
@@ -20,29 +20,29 @@ let items = {
         forSale: true //set to false when sold 
     },
     '3748372637':
-    {
-        sellerId: 'aly',
-        price: 4,
-        description: "very cold",
-        name: "ice cubes",
-        forSale: true //set to false when sold 
-    },
+        {
+            sellerId: 'aly',
+            price: 4,
+            description: "very cold",
+            name: "ice cubes",
+            forSale: true //set to false when sold 
+        },
     '4536271829':
-    {
-        sellerId: 'aly',
-        price: 90000,
-        description: "less cold",
-        name: "ice cubes shaped like dolphins",
-        forSale: true //set to false when sold  
-    },
+        {
+            sellerId: 'aly',
+            price: 90000,
+            description: "less cold",
+            name: "ice cubes shaped like dolphins",
+            forSale: true //set to false when sold  
+        },
     '574839827':
-    {
-        sellerId: 'ksenia',
-        price: 90,
-        description: "so nice",
-        name: "mint",
-        forSale: true //set to false when sold 
-    }
+        {
+            sellerId: 'ksenia',
+            price: 90,
+            description: "so nice",
+            name: "mint",
+            forSale: true //set to false when sold 
+        }
 }
 
 
@@ -81,7 +81,7 @@ function initializeUserIfNeeded(uid) {
     if (items == undefined) {
         putItemsBought(uid, []);
     }
-    if(itemsSold == undefined) {
+    if (itemsSold == undefined) {
         putItemsSold(uid, []);
     }
 }
@@ -172,15 +172,31 @@ function mapIdsToItems(itemIds) {
     return itemIds.map(itemId => getItemDescription(itemId));
 }
 
+function randomHomeItems() {
+    let itemsArray = Object.values(items);
+    let numbersMap = {};
+    let randomNumber = Math.floor(Math.random() * itemsArray.length);
+    let ret = []
+    if(itemsArray.length < 4) return itemsArray;
+
+    for (let i = 0; i < 4; i++) {
+        while(numbersMap[randomNumber]) randomNumber = Math.floor(Math.random() * itemsArray.length);
+        numbersMap[randomNumber] = true;
+        ret.push(itemsArray[randomNumber]);
+    }
+    return ret;
+}
+
 /*
 searchForListings returns the IDs of all the listings currently on the market
 Once an item is sold, it will not be returned by searchForListings
     parameter: [searchTerm] The search string matching listing descriptions
     returns: an array of listing IDs
 */
-function searchForListings(searchTerm) {
+//all done on front end
+// function searchForListings(searchTerm) {
 
-}
+// }
 
 module.exports = {
     // This is just a shorthand. It's the same as genUID: genUID. 
@@ -193,6 +209,7 @@ module.exports = {
     allItemsSold,
     allItemIds,
     allItems,
-    mapIdsToItems
+    mapIdsToItems,
+    randomHomeItems
     // Add all the other functions that need to be exported
 }

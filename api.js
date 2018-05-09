@@ -58,7 +58,8 @@ app.post('/login', (req, res) => {
 
 //displays 4 items on home page
 app.get('/home', (req, res) => {
-
+    let randomItems = alibay.randomHomeItems() 
+    res.send(JSON.stringify(randomItems))
 })
 
 //shows items sold by user
