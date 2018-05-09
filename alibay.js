@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-let itemsBought = {'aly': ['3748372637', '4536271829']};
+let itemsBought = {'aly': ['3748372637', '4536271829'], 'ksenia': ['574839827']}
 
 let itemsSold = {'ksenia': ['29384059454', '38293817283']} //JSON.parse('./itemsSold')
 
@@ -34,6 +34,14 @@ let items = {
         description: "less cold",
         name: "ice cubes shaped like dolphins",
         forSale: true //set to false when sold  
+    },
+    '574839827':
+    {
+        sellerId: 'ksenia',
+        price: 90,
+        description: "so nice",
+        name: "mint",
+        forSale: true //set to false when sold 
     }
 }
 
