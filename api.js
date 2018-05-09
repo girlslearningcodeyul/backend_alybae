@@ -105,7 +105,8 @@ app.post('/newListing', (req, res) => {
 //TODO:
 app.get('/buyItem', (req, res) => {
     let itemId = req.query.itemId
-    let buyerId = req.query.username
+    let buyerId = req.query.userId
+
     let buyIt = alibay.buy(itemId, buyerId)
     res.send(JSON.stringify(buyIt))
 })

@@ -157,7 +157,10 @@ The seller will see the listing in his history of items sold
 
 //TODO:
 function buy(itemId, buyerId) {
-    console.log(itemId)
+    console.log("a1",itemId)
+    console.log("a2",itemsBought)
+    console.log("a3",itemsBought[buyerId])
+    console.log("a4",buyerId)
     items[itemId].forSale = false;
     itemsBought[buyerId] = itemsBought[buyerId].concat(itemId)
     let sellerId = items[itemId].sellerId;
