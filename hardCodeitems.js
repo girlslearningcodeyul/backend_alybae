@@ -54,7 +54,7 @@ let items = {
 
         sellerId: 'Jordan',
         price: 200,
-        description: "All orbits around his ego...I mean talent",
+        description: "All orbits around his ego",
         name: "SunYe",
         forSale: true, //set to false when sold 
         itemId: '39896814283',
@@ -65,7 +65,7 @@ let items = {
 
         sellerId: 'Jordan',
         price: 200,
-        description: "Toasted toast toasted toastie toast toasting toast",
+        description: "Toasted toastie toast toasting toast",
         name: "Toastie Toast",
         forSale: true, //set to false when sold 
         itemId: '3256671483',
@@ -76,7 +76,7 @@ let items = {
 
         sellerId: 'Jordan',
         price: 732,
-        description: "WHOS A GOOD BOI YOU ARE YES YOOUU",
+        description: "WHOS A GOOD BOI?",
         name: "GoodBoi",
         forSale: true, //set to false when sold 
         itemId: '3536701753',
