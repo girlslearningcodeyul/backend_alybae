@@ -49,6 +49,38 @@ let items = {
         forSale: true, //set to false when sold 
         itemId: '574839827',
         imageLocation: 'http://localhost:4000/images/mint.jpg'
+    },
+    '39896814283': {
+
+        sellerId: 'Jordan',
+        price: 200,
+        description: "All orbits around his ego...I mean talent",
+        name: "SunYe",
+        forSale: true, //set to false when sold 
+        itemId: '39896814283',
+        imageLocation: 'http://localhost:4000/images/Kanye-the-Sun.jpg'
+
+    },
+    '3256671483': {
+
+        sellerId: 'Jordan',
+        price: 200,
+        description: "Toasted toast toasted toastie toast toasting toast",
+        name: "Toastie Toast",
+        forSale: true, //set to false when sold 
+        itemId: '3256671483',
+        imageLocation: 'http://localhost:4000/images/toast.jpg'
+
+    },
+    '3536701753': {
+
+        sellerId: 'Jordan',
+        price: 732,
+        description: "WHOS A GOOD BOI YOU ARE YES YOOUU",
+        name: "GoodBoi",
+        forSale: true, //set to false when sold 
+        itemId: '3536701753',
+        imageLocation: 'http://localhost:4000/images/floofDog.jpg',
     }
 }
 let itemsBought = { 
