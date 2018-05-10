@@ -106,14 +106,10 @@ The seller will see the listing in his history of items sold
 //add to itemsBought and itemsSold
 
 function buy(itemId, buyerId) {
-    console.log("a1",itemId)
-    console.log("a2",itemsBought)
-    console.log("a3",itemsBought[buyerId])
-    console.log("a4",buyerId)
     hc.items[itemId].forSale = false;
-    hc.itemsBought[buyerId] = itemsBought[buyerId].concat(itemId)
-    let sellerId = items[itemId].sellerId;
-    hc.itemsSold[sellerId] = itemsSold[sellerId].concat(itemId)
+    hc.itemsBought[buyerId] = hc.itemsBought[buyerId].concat(itemId)
+    let sellerId = hc.items[itemId].sellerId;
+    hc.itemsSold[sellerId] = hc.itemsSold[sellerId].concat(itemId)
     return { success: true }
 
 }
