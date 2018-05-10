@@ -1,61 +1,5 @@
 const assert = require('assert');
-
-let itemsBought = { 'aly': ['3748372637', '4536271829'], 'ksenia': ['574839827'] }
-
-let itemsSold = { 'ksenia': ['29384059454', '38293817283'] } 
-
-let items = {
-    '29384059454': {
-
-        sellerId: 'ksenia',
-        price: 200,
-        description: "furray like Bill Murray",
-        name: "cat",
-        forSale: true, //set to false when sold
-        itemId: '29384059454',
-        imageLocation: 'images/cat1.jpeg'
-    },
-    '38293817283': {
-
-        sellerId: 'ksenia',
-        price: 100,
-        description: "also like Bill Murray, but cuter",
-        name: "kitten",
-        forSale: true, //set to false when sold 
-        itemId: '38293817283',
-        imageLocation: 'images/kitten1.jpeg'
-
-    },
-    '3748372637': {
-
-        sellerId: 'aly',
-        price: 4,
-        description: "very cold",
-        name: "ice cubes",
-        forSale: true, //set to false when sold 
-        itemId: '3748372637',
-        imageLocation: 'images/ice_cube.jpg'
-    },
-    '4536271829': {
-
-        sellerId: 'aly',
-        price: 90000,
-        description: "less cold",
-        name: "ice cubes shaped like dolphins",
-        forSale: true, //set to false when sold 
-        imageLocation: 'images/dolphin_icecubes-1.jpg'
-    },
-    '574839827': {
-
-        sellerId: 'ksenia',
-        price: 90,
-        description: "so nice, so fresh, so frisky",
-        name: "mint",
-        forSale: true, //set to false when sold 
-        itemId: '574839827',
-        imageLocation: 'images/mint.jpg'
-    }
-}
+const hc = require('./hardCodeItems')
 
 
 /*
@@ -68,16 +12,16 @@ function genUID() {
 }
 //user id connected to an array of item ids
 function putItemsBought(userId, items) {
-    itemsBought[userId] = items
+    hc.itemsBought[userId] = items
     //need to write to itemsBought
 }
 function putItemsSold(userId, items) {
-    itemsSold[userId] = items
+    hc.itemsSold[userId] = items
 }
 
 //shows items that that user has bought
 function getItemsBought(userId) {
-    return itemsBought[userId];
+    return hc.itemsBought[userId];
 }
 
 
@@ -118,7 +62,7 @@ This function is incomplete. You need to complete it.
 */
 function createListing({ sellerId, price, description, name, imageLocation }) {
     let itemId = genUID();
-    items[itemId] = {
+    hc.items[itemId] = {
         sellerId: sellerId,
         price: price,
         description: description,
@@ -138,7 +82,7 @@ getItemDescription returns the description of a listing
     returns: An object containing the price and blurb properties.
 */
 function getItemDescription(itemId) {
-    return items[itemId]
+    return hc.items[itemId]
 }
 //trying for a function that returns item description and it's Id
 // function getItemDescAndKey(itemId){
@@ -161,16 +105,15 @@ The seller will see the listing in his history of items sold
 //change the sellerId
 //add to itemsBought and itemsSold
 
-//TODO:
 function buy(itemId, buyerId) {
     console.log("a1",itemId)
     console.log("a2",itemsBought)
     console.log("a3",itemsBought[buyerId])
     console.log("a4",buyerId)
-    items[itemId].forSale = false;
-    itemsBought[buyerId] = itemsBought[buyerId].concat(itemId)
+    hc.items[itemId].forSale = false;
+    hc.itemsBought[buyerId] = itemsBought[buyerId].concat(itemId)
     let sellerId = items[itemId].sellerId;
-    itemsSold[sellerId] = itemsSold[sellerId].concat(itemId)
+    hc.itemsSold[sellerId] = itemsSold[sellerId].concat(itemId)
     return { success: true }
 
 }
@@ -183,7 +126,7 @@ allItemsSold returns the IDs of all the items sold by a seller
 */
 //when not hardcoded, check for items forSale property (false returns the sold items then)
 function allItemsSold(sellerID) {
-    return itemsSold[sellerID];
+    return hc.itemsSold[sellerID];
 }
 
 // allListings returns the IDs of all the listings currently on the market
@@ -192,7 +135,7 @@ function allItemsSold(sellerID) {
 
 //filtering for boolean, returns items not sold as array of Ids
 function allItemIds() {
-    return Object.keys(items).filter((itemId) => items[itemId].forSale)
+    return Object.keys(hc.items).filter((itemId) => hc.items[itemId].forSale)
 }
 
 //returns an array of all items

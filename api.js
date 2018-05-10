@@ -113,8 +113,8 @@ app.get('/buyItem', (req, res) => {
     let buyerId = req.query.userId
 
     let buyIt = alibay.buy(itemId, buyerId)
-    fs.writeFileSync('data/itemsBought.json', JSON.stringify(buyIt))
-    fs.writeFileSync('data/itemsSold.json', JSON.stringify(buyIt))
+    fs.writeFileSync('data/itemsBought.json', JSON.stringify(itemId))
+    fs.writeFileSync('data/itemsSold.json', JSON.stringify(itemId))
     res.send(JSON.stringify(buyIt))
 })
 
