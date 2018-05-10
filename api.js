@@ -98,13 +98,16 @@ app.post('/newListing', (req, res) => {
     let parsed = JSON.parse(req.body.toString());
     if(parsed !== undefined){
         let parsedListing = alibay.createListing(parsed)
-        fs.writeFileSync('data/itemsBought.json', JSON.stringify(parsedListing))
-        fs.writeFileSync('data/itemsSold.json', JSON.stringify(parsedListing))
+        fs.writeFileSync('data/items.json', JSON.stringify(parsedListing))
         res.send(JSON.stringify(parsedListing));
     }else{
         res.send({"success": false, "reason": "not all params met"})
     }
 })
+
+
+      //  fs.writeFileSync('data/itemsBought.json', JSON.stringify(parsedListing))
+       // fs.writeFileSync('data/itemsSold.json', JSON.stringify(parsedListing))
 
 //adds item to user account history, removes it from listings page
 app.get('/buyItem', (req, res) => {
