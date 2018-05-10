@@ -125,7 +125,7 @@ function createListing({ sellerId, price, description, name, img }) {
         name: name,
         forSale: true,
         itemId: itemId,
-        imageLocation: img
+        imageLocation: 'http://localhost:4000/' + img
 
     }
     return itemId;
