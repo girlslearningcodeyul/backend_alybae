@@ -59,7 +59,7 @@ app.post('/login', (req, res) => {
 app.get('/getItemDetails', (req, res) => {
     let itemId = req.query.itemId
     let itemDetails = alibay.getItemDescription(itemId)
-    res.send(JSON.stringify(itemDetails, itemId))
+    res.send(JSON.stringify(itemDetails))
 })
 
 //displays 4 items on home page
