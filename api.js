@@ -5,6 +5,8 @@ const app = express()
 const bodyParser = require('body-parser')
 const fs = require('fs')
 
+app.use(express.static('images'))
+
 app.use(bodyParser.raw({ type: '*/*', limit: '50mb' }))
 
 let serverState = {
@@ -98,7 +100,7 @@ app.post('/newListing', (req, res) => {
     }else{
         res.send({"success": false, "reason": "not all params met"})
     }
-    
+    // needs to write to file still fs.writeFileSync('data/items.json', JSON.stringify())
 })
 
 //adds item to user account history, removes it from listings page
@@ -112,8 +114,12 @@ app.get('/buyItem', (req, res) => {
 })
 
 app.post('/uploadPics', (req, res) => {
-    fs.writeFileSync('data/images', req.body);
-    res.send('file uploaded')
+    let extension = req.query.ext.split('.').pop();
+    let randomString = '' +  Math.floor(Math.random() * 10000000)
+    let randomFilename = randomString + '.' + extension
+    fs.writeFileSync('data/images/' +  randomFilename, req.body);
+    res.send(randomFilename)
+    
 })
 
 app.listen(4000, () => console.log('Listening on port 4000!'))
