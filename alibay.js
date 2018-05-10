@@ -150,17 +150,21 @@ The seller will see the listing in his history of items sold
      [listingID] The ID of listing
     returns: undefined
 */
-//change forSale boolean
+//change forSale boolea
 //change the sellerId
 //add to itemsBought and itemsSold
 
 //TODO:
 function buy(itemId, buyerId) {
+    console.log("a1",itemId)
+    console.log("a2",itemsBought)
+    console.log("a3",itemsBought[buyerId])
+    console.log("a4",buyerId)
     items[itemId].forSale = false;
-    items[itemId].sellerId = '';
-    // itemsBought.buyerId[itemId]
-    // itemsSold.buyerId[itemId]
-    return "success"
+    itemsBought[buyerId] = itemsBought[buyerId].concat(itemId)
+    let sellerId = items[itemId].sellerId;
+    itemsSold[sellerId] = itemsSold[sellerId].concat(itemId)
+    return { success: true }
 
 }
 
