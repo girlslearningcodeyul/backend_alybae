@@ -38,11 +38,7 @@ let items = {
         name: "ice cubes shaped like dolphins",
         forSale: true, //set to false when sold 
         itemId: '4536271829',
-<<<<<<< HEAD
-        imageLocation: 'images/dolphin_icecubes-1.jpg'
-=======
         imageLocation: 'http://localhost:4000/images/dolphin_icecubes-1.jpg'
->>>>>>> c494f621ac4ceb7887a157443cf92bdf81ad4cc9
     },
     '574839827': {
 
@@ -52,8 +48,7 @@ let items = {
         name: "mint",
         forSale: true, //set to false when sold 
         itemId: '574839827',
-<<<<<<< HEAD
-        imageLocation: 'images/mint.jpg'
+        imageLocation: 'http://localhost:4000/images/mint.jpg'
     },
     '39896814283': {
 
@@ -63,7 +58,7 @@ let items = {
         name: "SunYe",
         forSale: true, //set to false when sold 
         itemId: '39896814283',
-        imageLocation: 'images/Kanye-the-Sun.jpg'
+        imageLocation: 'http://localhost:4000/images/Kanye-the-Sun.jpg'
 
     },
     '3256671483': {
@@ -74,7 +69,7 @@ let items = {
         name: "Toastie Toast",
         forSale: true, //set to false when sold 
         itemId: '3256671483',
-        imageLocation: 'images/toast.jpg'
+        imageLocation: 'http://localhost:4000/images/toast.jpg'
 
     },
     '3536701753': {
@@ -85,11 +80,7 @@ let items = {
         name: "GoodBoi",
         forSale: true, //set to false when sold 
         itemId: '3536701753',
-        imageLocation: 'images/floofDog.jpg'
-
-=======
-        imageLocation: 'http://localhost:4000/images/mint.jpg'
->>>>>>> c494f621ac4ceb7887a157443cf92bdf81ad4cc9
+        imageLocation: 'http://localhost:4000/images/floofDog.jpg',
     }
 }
 let itemsBought = { 
