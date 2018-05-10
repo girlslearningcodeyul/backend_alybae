@@ -43,7 +43,7 @@ let items = {
         description: "less cold",
         name: "ice cubes shaped like dolphins",
         forSale: true, //set to false when sold 
-        imageLocation: 'images/dolphin_icecube.jpg'
+        imageLocation: 'images/dolphin_icecube-1.jpg'
     },
     '574839827': {
 
