@@ -111,5 +111,10 @@ app.get('/buyItem', (req, res) => {
     res.send(JSON.stringify(buyIt))
 })
 
+app.post('/uploadPics', (req, res) => {
+    fs.writeFileSync('data/images', req.body);
+    res.send('file uploaded')
+})
+
 app.listen(4000, () => console.log('Listening on port 4000!'))
 
