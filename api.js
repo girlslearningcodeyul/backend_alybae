@@ -10,7 +10,7 @@ app.use(express.static('public'))
 app.use(bodyParser.raw({ type: '*/*', limit: '50mb' }))
 
 let serverState = {
-   
+
 }
 
 //Ksenia's added code
@@ -66,7 +66,7 @@ app.get('/getItemDetails', (req, res) => {
 
 //displays 4 items on home page
 app.get('/home', (req, res) => {
-    let randomItems = alibay.randomHomeItems() 
+    let randomItems = alibay.randomHomeItems()
     res.send(JSON.stringify(randomItems))
 })
 
@@ -80,7 +80,7 @@ app.get('/getItemsSold', (req, res) => {
 
 //get items bought by user
 app.get('/getItemsBought', (req, res) => {
-    let userId = req.query.userId 
+    let userId = req.query.userId
     let itemsBoughtIds = alibay.getItemsBought(userId)
     res.send(JSON.stringify(alibay.mapIdsToItems(itemsBoughtIds)))
 })
@@ -96,18 +96,16 @@ app.get('/allItems', (req, res) => {
 //added fs.writeFileSync
 app.post('/newListing', (req, res) => {
     let parsed = JSON.parse(req.body.toString());
-    if(parsed !== undefined){
+    if (parsed !== undefined) {
         let parsedListing = alibay.createListing(parsed)
         fs.writeFileSync('data/items.json', JSON.stringify(parsedListing))
         res.send(JSON.stringify(parsedListing));
-    }else{
-        res.send({"success": false, "reason": "not all params met"})
+    } else {
+        res.send({ "success": false, "reason": "not all params met" })
     }
 })
 
 
-      //  fs.writeFileSync('data/itemsBought.json', JSON.stringify(parsedListing))
-       // fs.writeFileSync('data/itemsSold.json', JSON.stringify(parsedListing))
 
 //adds item to user account history, removes it from listings page
 app.get('/buyItem', (req, res) => {
@@ -115,16 +113,18 @@ app.get('/buyItem', (req, res) => {
     let buyerId = req.query.userId
 
     let buyIt = alibay.buy(itemId, buyerId)
+    fs.writeFileSync('data/itemsBought.json', JSON.stringify(buyIt))
+    fs.writeFileSync('data/itemsSold.json', JSON.stringify(buyIt))
     res.send(JSON.stringify(buyIt))
 })
 
 app.post('/uploadPics', (req, res) => {
     let extension = req.query.ext
-    let randomString = '' +  Math.floor(Math.random() * 10000000)
+    let randomString = '' + Math.floor(Math.random() * 10000000)
     let randomFilename = randomString + '.' + extension
-    fs.writeFileSync('public/images/' +  randomFilename, req.body);
+    fs.writeFileSync('public/images/' + randomFilename, req.body);
     res.send(JSON.stringify(randomFilename))
-    
+
 })
 
 app.listen(4000, () => console.log('Listening on port 4000!'))
