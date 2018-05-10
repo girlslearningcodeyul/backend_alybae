@@ -37,6 +37,7 @@ let items = {
         description: "less cold",
         name: "ice cubes shaped like dolphins",
         forSale: true, //set to false when sold 
+        itemId: '4536271829',
         imageLocation: 'images/dolphin_icecubes-1.jpg'
     },
     '574839827': {
@@ -48,6 +49,39 @@ let items = {
         forSale: true, //set to false when sold 
         itemId: '574839827',
         imageLocation: 'images/mint.jpg'
+    },
+    '39896814283': {
+
+        sellerId: 'Jordan',
+        price: 200,
+        description: "All orbits around his ego...I mean talent",
+        name: "SunYe",
+        forSale: true, //set to false when sold 
+        itemId: '39896814283',
+        imageLocation: 'images/Kanye-the-Sun.jpg'
+
+    },
+    '3256671483': {
+
+        sellerId: 'Jordan',
+        price: 200,
+        description: "Toasted toast toasted toastie toast toasting toast",
+        name: "Toastie Toast",
+        forSale: true, //set to false when sold 
+        itemId: '3256671483',
+        imageLocation: 'images/toast.jpg'
+
+    },
+    '3536701753': {
+
+        sellerId: 'Jordan',
+        price: 732,
+        description: "WHOS A GOOD BOI YOU ARE YES YOOUU",
+        name: "GoodBoi",
+        forSale: true, //set to false when sold 
+        itemId: '3536701753',
+        imageLocation: 'images/floofDog.jpg'
+
     }
 }
 let itemsBought = { 
