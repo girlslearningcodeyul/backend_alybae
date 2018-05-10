@@ -19,7 +19,7 @@ let items = {
 
         sellerId: 'ksenia',
         price: 100,
-        description: "also like Bill Murray",
+        description: "also like Bill Murray, but cuter",
         name: "kitten",
         forSale: true, //set to false when sold 
         itemId: '38293817283',
@@ -33,24 +33,27 @@ let items = {
         description: "very cold",
         name: "ice cubes",
         forSale: true, //set to false when sold 
-        itemId: '3748372637'
+        itemId: '3748372637',
+        imageLocation: 'images/ice_cube.jpg'
     },
     '4536271829': {
 
         sellerId: 'aly',
         price: 90000,
         description: "less cold",
-        name: "spice cubes shaped like dolphins",
-        forSale: true //set to false when sold  
+        name: "ice cubes shaped like dolphins",
+        forSale: true, //set to false when sold 
+        imageLocation: 'images/dolphin_icecube.jpg'
     },
     '574839827': {
 
         sellerId: 'ksenia',
         price: 90,
-        description: "so nice",
+        description: "so nice, so fresh, so frisky",
         name: "mint",
         forSale: true, //set to false when sold 
-        itemId: '574839827'
+        itemId: '574839827',
+        imageLocation: 'images/mint.jpg'
     }
 }
 
