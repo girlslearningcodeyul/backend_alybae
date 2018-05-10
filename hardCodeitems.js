@@ -7,7 +7,7 @@ let items = {
         name: "cat",
         forSale: true, //set to false when sold
         itemId: '29384059454',
-        imageLocation: 'images/cat1.jpeg'
+        imageLocation: 'http://localhost:4000/images/cat1.jpeg'
     },
     '38293817283': {
 
@@ -17,7 +17,7 @@ let items = {
         name: "kitten",
         forSale: true, //set to false when sold 
         itemId: '38293817283',
-        imageLocation: 'images/kitten1.jpeg'
+        imageLocation: 'http://localhost:4000/images/kitten1.jpeg'
 
     },
     '3748372637': {
@@ -28,7 +28,7 @@ let items = {
         name: "ice cubes",
         forSale: true, //set to false when sold 
         itemId: '3748372637',
-        imageLocation: 'images/ice_cube.jpg'
+        imageLocation: 'http://localhost:4000/images/ice_cube.jpg'
     },
     '4536271829': {
 
@@ -37,7 +37,8 @@ let items = {
         description: "less cold",
         name: "ice cubes shaped like dolphins",
         forSale: true, //set to false when sold 
-        imageLocation: 'images/dolphin_icecubes-1.jpg'
+        itemId: '4536271829',
+        imageLocation: 'http://localhost:4000/images/dolphin_icecubes-1.jpg'
     },
     '574839827': {
 
@@ -47,7 +48,7 @@ let items = {
         name: "mint",
         forSale: true, //set to false when sold 
         itemId: '574839827',
-        imageLocation: 'images/mint.jpg'
+        imageLocation: 'http://localhost:4000/images/mint.jpg'
     }
 }
 let itemsBought = { 
