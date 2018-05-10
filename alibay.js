@@ -37,9 +37,8 @@ let items = {
         sellerId: 'aly',
         price: 90000,
         description: "less cold",
-        name: "ice cubes shaped like dolphins",
-        forSale: true, //set to false when sold  
-        itemId: '4536271829'
+        name: "spice cubes shaped like dolphins",
+        forSale: true //set to false when sold  
     },
     '574839827': {
 
