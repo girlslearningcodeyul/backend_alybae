@@ -16,7 +16,7 @@ let serverState = {
 //Ksenia's added code
 let sessionInfo = {}; //store session IDs in the sessionInfo class
 
-let info = {}; //store the accounts here
+let info = JSON.parse(fs.readFileSync('data/info.json'))
 
 try {
     info = JSON.parse(fs.readFileSync('data/info.json').toString());//JSON.parse to turn into a javascript object
@@ -38,7 +38,7 @@ app.post('/createAccount', (req, res) => {
     sessionInfo[sessionID] = username;
     info[username] = password; //additing username and password to the associative map and storing it
     alibay.initializeUserIfNeeded(username)
-    fs.writeFileSync('data/info.json', JSON.stringify(info)); //write to file whenever the file changes
+    fs.writeFileSync('data/info.json', info); //write to file whenever the file changes
     res.send(JSON.stringify({ username, password, sessionID }));
 })
 
@@ -92,14 +92,13 @@ app.get('/allItems', (req, res) => {
 
 
 //this stores the new item created on the form on the create listing page,
-//and displays it to the all listings page
+//and displays it to the all listings pagels
 //added fs.writeFileSync
 app.post('/newListing', (req, res) => {
     let parsed = JSON.parse(req.body.toString());
     if (parsed !== undefined) {
-        let parsedListing = alibay.createListing(parsed)
-        fs.writeFileSync('data/items.json', JSON.stringify(parsedListing))
-        res.send(JSON.stringify(parsedListing));
+        let itemId = alibay.createListing(parsed)
+        res.send(JSON.stringify(itemId));
     } else {
         res.send({ "success": false, "reason": "not all params met" })
     }
@@ -113,8 +112,6 @@ app.get('/buyItem', (req, res) => {
     let buyerId = req.query.userId
 
     let buyIt = alibay.buy(itemId, buyerId)
-    fs.writeFileSync('data/itemsBought.json', JSON.stringify(itemId))
-    fs.writeFileSync('data/itemsSold.json', JSON.stringify(itemId))
     res.send(JSON.stringify(buyIt))
 })
 

@@ -1,5 +1,12 @@
 const assert = require('assert');
-const hc = require('./hardCodeItems')
+const fs = require('fs');
+// const hc = require('./hardCodeItems')
+
+let items = JSON.parse(fs.readFileSync('data/items.json'))
+let itemsBought = JSON.parse(fs.readFileSync('data/itemsBought.json'))
+let itemsSold = JSON.parse(fs.readFileSync('data/itemsSold.json'))
+
+
 
 
 /*
@@ -12,16 +19,17 @@ function genUID() {
 }
 //user id connected to an array of item ids
 function putItemsBought(userId, items) {
-    hc.itemsBought[userId] = items
-    //need to write to itemsBought
+    itemsBought[userId] = items
+    fs.writeFileSync('data/itemsBought.json', itemsBought)
 }
 function putItemsSold(userId, items) {
-    hc.itemsSold[userId] = items
+    itemsSold[userId] = items
+    fs.writeFileSync('data/itemsSold.json', itemsSold)
 }
 
 //shows items that that user has bought
 function getItemsBought(userId) {
-    return hc.itemsBought[userId];
+    return itemsBought[userId];
 }
 
 
@@ -32,9 +40,9 @@ returns: undefined
 */
 //if buyer never bought anything assigns empty array
 function initializeUserIfNeeded(uid) {
-    var items = getItemsBought(uid);
+    var itemsBought = getItemsBought(uid);
     var itemsSold = allItemsSold(uid)
-    if (items == undefined) {
+    if (itemsBought == undefined) {
         putItemsBought(uid, []);
     }
     if (itemsSold == undefined) {
@@ -62,7 +70,7 @@ This function is incomplete. You need to complete it.
 */
 function createListing({ sellerId, price, description, name, imageLocation }) {
     let itemId = genUID();
-    hc.items[itemId] = {
+    items[itemId] = {
         sellerId: sellerId,
         price: price,
         description: description,
@@ -72,6 +80,7 @@ function createListing({ sellerId, price, description, name, imageLocation }) {
         imageLocation: 'http://localhost:4000/images/' + imageLocation
 
     }
+    fs.writeFileSync('data/items.json', items)
     return itemId;
     //return item ID
 }
@@ -82,7 +91,7 @@ getItemDescription returns the description of a listing
     returns: An object containing the price and blurb properties.
 */
 function getItemDescription(itemId) {
-    return hc.items[itemId]
+    return items[itemId]
 }
 //trying for a function that returns item description and it's Id
 // function getItemDescAndKey(itemId){
@@ -106,10 +115,12 @@ The seller will see the listing in his history of items sold
 //add to itemsBought and itemsSold
 
 function buy(itemId, buyerId) {
-    hc.items[itemId].forSale = false;
-    hc.itemsBought[buyerId] = hc.itemsBought[buyerId].concat(itemId)
-    let sellerId = hc.items[itemId].sellerId;
-    hc.itemsSold[sellerId] = hc.itemsSold[sellerId].concat(itemId)
+    items[itemId].forSale = false;
+    itemsBought[buyerId] = itemsBought[buyerId].concat(itemId)
+    let sellerId = items[itemId].sellerId;
+    itemsSold[sellerId] = itemsSold[sellerId].concat(itemId)
+    fs.writeFileSync('data/itemsBought.json', itemsBought)
+    fs.writeFileSync('data/itemsSold.json', itemsSold)
     return { success: true }
 
 }
@@ -122,7 +133,7 @@ allItemsSold returns the IDs of all the items sold by a seller
 */
 //when not hardcoded, check for items forSale property (false returns the sold items then)
 function allItemsSold(sellerID) {
-    return hc.itemsSold[sellerID];
+    return itemsSold[sellerID];
 }
 
 // allListings returns the IDs of all the listings currently on the market
@@ -131,7 +142,7 @@ function allItemsSold(sellerID) {
 
 //filtering for boolean, returns items not sold as array of Ids
 function allItemIds() {
-    return Object.keys(hc.items).filter((itemId) => hc.items[itemId].forSale)
+    return Object.keys(items).filter((itemId) => items[itemId].forSale)
 }
 
 //returns an array of all items
