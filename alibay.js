@@ -12,7 +12,8 @@ let items = {
         description: "furray like Bill Murray",
         name: "cat",
         forSale: true, //set to false when sold
-        itemId: 29384059454
+        itemId: '29384059454',
+        imageLocation: 'images/cat1.jpeg'
     },
     '38293817283': {
 
@@ -21,7 +22,9 @@ let items = {
         description: "also like Bill Murray",
         name: "kitten",
         forSale: true, //set to false when sold 
-        itemId: '38293817283'
+        itemId: '38293817283',
+        imageLocation: 'images/kitten1.jpeg'
+
     },
     '3748372637': {
 
@@ -118,7 +121,8 @@ function createListing({ sellerId, price, description, name }) {
         description: description,
         name: name,
         forSale: true,
-        itemId: itemId
+        itemId: itemId,
+        imageLocation: img
 
     }
     return itemId;
