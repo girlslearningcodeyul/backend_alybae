@@ -116,7 +116,7 @@ This function is incomplete. You need to complete it.
       [blurb] A blurb describing the item
     returns: The ID of the new listing
 */
-function createListing({ sellerId, price, description, name }) {
+function createListing({ sellerId, price, description, name, img }) {
     let itemId = genUID();
     items[itemId] = {
         sellerId: sellerId,
