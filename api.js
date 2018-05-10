@@ -5,7 +5,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const fs = require('fs')
 
-app.use(express.static('images'))
+app.use(express.static('public'))
 
 app.use(bodyParser.raw({ type: '*/*', limit: '50mb' }))
 
@@ -116,7 +116,7 @@ app.post('/uploadPics', (req, res) => {
     let extension = req.query.ext.split('.').pop();
     let randomString = '' +  Math.floor(Math.random() * 10000000)
     let randomFilename = randomString + '.' + extension
-    fs.writeFileSync('data/images/' +  randomFilename, req.body);
+    fs.writeFileSync('public/images/' +  randomFilename, req.body);
     res.send(randomFilename)
     
 })
