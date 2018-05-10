@@ -5,7 +5,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const fs = require('fs')
 
-app.use(bodyParser.raw({ type: "*/*" }))
+app.use(bodyParser.raw({ type: '*/*', limit: '50mb' }))
 
 let serverState = {
    
