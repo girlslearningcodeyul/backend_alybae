@@ -2,7 +2,7 @@ const assert = require('assert');
 
 let itemsBought = { 'aly': ['3748372637', '4536271829'], 'ksenia': ['574839827'] }
 
-let itemsSold = { 'ksenia': ['29384059454', '38293817283'] } //JSON.parse('./itemsSold')
+let itemsSold = { 'ksenia': ['29384059454', '38293817283'] } 
 
 let items = {
     '29384059454': {
@@ -116,7 +116,7 @@ This function is incomplete. You need to complete it.
       [blurb] A blurb describing the item
     returns: The ID of the new listing
 */
-function createListing({ sellerId, price, description, name, img }) {
+function createListing({ sellerId, price, description, name, imageLocation }) {
     let itemId = genUID();
     items[itemId] = {
         sellerId: sellerId,
@@ -125,7 +125,7 @@ function createListing({ sellerId, price, description, name, img }) {
         name: name,
         forSale: true,
         itemId: itemId,
-        imageLocation: 'http://localhost:4000/' + img
+        imageLocation: 'http://localhost:4000/images/' + imageLocation
 
     }
     return itemId;

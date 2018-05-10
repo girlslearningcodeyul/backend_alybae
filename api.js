@@ -93,14 +93,17 @@ app.get('/allItems', (req, res) => {
 
 //this stores the new item created on the form on the create listing page,
 //and displays it to the all listings page
+//added fs.writeFileSync
 app.post('/newListing', (req, res) => {
     let parsed = JSON.parse(req.body.toString());
     if(parsed !== undefined){
-        res.send(JSON.stringify(alibay.createListing(parsed)));
+        let parsedListing = alibay.createListing(parsed)
+        fs.writeFileSync('data/itemsBought.json', JSON.stringify(parsedListing))
+        fs.writeFileSync('data/itemsSold.json', JSON.stringify(parsedListing))
+        res.send(JSON.stringify(parsedListing));
     }else{
         res.send({"success": false, "reason": "not all params met"})
     }
-    // needs to write to file still fs.writeFileSync('data/items.json', JSON.stringify())
 })
 
 //adds item to user account history, removes it from listings page
@@ -113,7 +116,7 @@ app.get('/buyItem', (req, res) => {
 })
 
 app.post('/uploadPics', (req, res) => {
-    let extension = req.query.ext.split('.').pop();
+    let extension = req.query.ext
     let randomString = '' +  Math.floor(Math.random() * 10000000)
     let randomFilename = randomString + '.' + extension
     fs.writeFileSync('public/images/' +  randomFilename, req.body);
