@@ -52,7 +52,7 @@ let items = {
     },
     '39896814283': {
 
-        sellerId: 'Jordan',
+        sellerId: 'jordan',
         price: 200,
         description: "All orbits around his ego...I mean talent",
         name: "SunYe",
@@ -63,7 +63,7 @@ let items = {
     },
     '3256671483': {
 
-        sellerId: 'Jordan',
+        sellerId: 'jordan',
         price: 200,
         description: "Toasted toast toasted toastie toast toasting toast",
         name: "Toastie Toast",
@@ -74,7 +74,7 @@ let items = {
     },
     '3536701753': {
 
-        sellerId: 'Jordan',
+        sellerId: 'jordan',
         price: 732,
         description: "WHOS A GOOD BOI YOU ARE YES YOOUU",
         name: "GoodBoi",
