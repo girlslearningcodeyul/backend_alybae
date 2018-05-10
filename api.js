@@ -117,7 +117,7 @@ app.post('/uploadPics', (req, res) => {
     let randomString = '' +  Math.floor(Math.random() * 10000000)
     let randomFilename = randomString + '.' + extension
     fs.writeFileSync('public/images/' +  randomFilename, req.body);
-    res.send(randomFilename)
+    res.send(JSON.stringify(randomFilename))
     
 })
 
