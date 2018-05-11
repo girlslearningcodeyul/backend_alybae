@@ -70,19 +70,24 @@ This function is incomplete. You need to complete it.
 */
 function createListing({ sellerId, price, description, name, imageLocation }) {
     let itemId = genUID();
-    items[itemId] = {
-        sellerId: sellerId,
-        price: price,
-        description: description,
-        name: name,
-        forSale: true,
-        itemId: itemId,
-        imageLocation: 'http://localhost:4000/images/' + imageLocation
-
+    if(name === undefined || description === undefined || price === undefined){
+        return null;
+    }else{
+        items[itemId] = {
+            sellerId: sellerId,
+            price: price,
+            description: description,
+            name: name,
+            forSale: true,
+            itemId: itemId,
+            imageLocation: 'http://localhost:4000/images/' + imageLocation
+    
+        }
+        fs.writeFileSync('data/items.json', JSON.stringify(items))
+        return itemId;
+        //return item ID
     }
-    fs.writeFileSync('data/items.json', JSON.stringify(items))
-    return itemId;
-    //return item ID
+    
 }
 
 /* 
@@ -159,9 +164,9 @@ function randomHomeItems() {
     let numbersMap = {};
     let randomNumber = Math.floor(Math.random() * itemsArray.length);
     let ret = []
-    if (itemsArray.length < 4) return itemsArray;
+    if (itemsArray.length < 6) return itemsArray;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
         while (numbersMap[randomNumber]) randomNumber = Math.floor(Math.random() * itemsArray.length);
         numbersMap[randomNumber] = true;
         ret.push(itemsArray[randomNumber]);
