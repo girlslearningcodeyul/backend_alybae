@@ -32,13 +32,11 @@ app.post('/createAccount', (req, res) => {
     if (info[username]) {
         return res.send(JSON.stringify('account already exists'));
     }
-
-
     let sessionID = Math.floor(Math.random() * 10000000);
     sessionInfo[sessionID] = username;
     info[username] = password; //additing username and password to the associative map and storing it
     alibay.initializeUserIfNeeded(username)
-    fs.writeFileSync('data/info.json', info); //write to file whenever the file changes
+    fs.writeFileSync('data/info.json', JSON.stringify(info)); //write to file whenever the file changes
     res.send(JSON.stringify({ username, password, sessionID }));
 })
 

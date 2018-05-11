@@ -20,11 +20,11 @@ function genUID() {
 //user id connected to an array of item ids
 function putItemsBought(userId, items) {
     itemsBought[userId] = items
-    fs.writeFileSync('data/itemsBought.json', itemsBought)
+    fs.writeFileSync('data/itemsBought.json', JSON.stringify(itemsBought))
 }
 function putItemsSold(userId, items) {
     itemsSold[userId] = items
-    fs.writeFileSync('data/itemsSold.json', itemsSold)
+    fs.writeFileSync('data/itemsSold.json', JSON.stringify(itemsSold))
 }
 
 //shows items that that user has bought
@@ -80,7 +80,7 @@ function createListing({ sellerId, price, description, name, imageLocation }) {
         imageLocation: 'http://localhost:4000/images/' + imageLocation
 
     }
-    fs.writeFileSync('data/items.json', items)
+    fs.writeFileSync('data/items.json', JSON.stringify(items))
     return itemId;
     //return item ID
 }
@@ -119,8 +119,8 @@ function buy(itemId, buyerId) {
     itemsBought[buyerId] = itemsBought[buyerId].concat(itemId)
     let sellerId = items[itemId].sellerId;
     itemsSold[sellerId] = itemsSold[sellerId].concat(itemId)
-    fs.writeFileSync('data/itemsBought.json', itemsBought)
-    fs.writeFileSync('data/itemsSold.json', itemsSold)
+    fs.writeFileSync('data/itemsBought.json', JSON.stringify(itemsBought));
+    fs.writeFileSync('data/itemsSold.json', JSON.stringify(itemsSold));
     return { success: true }
 
 }
