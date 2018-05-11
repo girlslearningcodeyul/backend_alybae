@@ -97,8 +97,10 @@ app.post('/newListing', (req, res) => {
     if (parsed !== undefined) {
         let itemId = alibay.createListing(parsed)
         res.send(JSON.stringify(itemId));
-    } else {
-        res.send({ "success": false, "reason": "not all params met" })
+    } else if(null){
+        res.send({"success": false, "reason": "not all parameters were met"})
+    }else {
+        res.send({ "success": false, "reason": "undefined" })
     }
 })
 
