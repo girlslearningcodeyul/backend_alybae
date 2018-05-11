@@ -159,9 +159,9 @@ function randomHomeItems() {
     let numbersMap = {};
     let randomNumber = Math.floor(Math.random() * itemsArray.length);
     let ret = []
-    if (itemsArray.length < 4) return itemsArray;
+    if (itemsArray.length < 6) return itemsArray;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
         while (numbersMap[randomNumber]) randomNumber = Math.floor(Math.random() * itemsArray.length);
         numbersMap[randomNumber] = true;
         ret.push(itemsArray[randomNumber]);
