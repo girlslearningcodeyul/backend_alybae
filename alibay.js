@@ -70,7 +70,7 @@ This function is incomplete. You need to complete it.
 */
 function createListing({ sellerId, price, description, name, imageLocation }) {
     let itemId = genUID();
-    if(name === undefined || description === undefined || price === undefined){
+    if(name === undefined || description === '' || price === undefined){
         return null;
     }else{
         items[itemId] = {
