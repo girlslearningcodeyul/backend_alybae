@@ -88,6 +88,7 @@ function createListing({ sellerId, price, description, name, imageLocation }) {
         //return item ID
     }
     
+    //no reason this comment is here really, just having push problems
 }
 
 /* 
