@@ -11,7 +11,7 @@
     "11087811": {
         "sellerId": "marie-claire lemonde",
         "price": "0",
-        "description": "Ever wonder why your house it not a trampoline? ",
+        "description": "Ever wonder why your house is not a trampoline? ",
         "name": "Bouncy House",
         "forSale": true,
         "itemId": 11087811,
@@ -20,7 +20,7 @@
     "13050587": {
         "sellerId": "bob bigmoney",
         "price": "33",
-        "description": "Don't be square, dolphins are cool. ",
+        "description": "Don't be a square, dolphins are cool. ",
         "name": "Ice cubes shaped like dolphins",
         "forSale": true,
         "itemId": 13050587,
@@ -46,7 +46,7 @@
     },
     "30512367": {
         "sellerId": "ksenia",
-        "price": "4",
+        "price": "4.00",
         "description": "very cold",
         "name": "ice cubes",
         "forSale": true,
