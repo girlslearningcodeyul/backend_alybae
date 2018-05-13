@@ -1,1 +1,137 @@
-{"9598413":{"sellerId":"marie-claire lemonde","price":"300.00","description":"Despite the deceptive name, works for all music genres!","name":"Disco Ball","forSale":true,"itemId":9598413,"imageLocation":"http://localhost:4000/images/2271963.jpeg"},"11087811":{"sellerId":"marie-claire lemonde","price":"0","description":"Ever wonder why your house it not a trampoline? ","name":"Bouncy House","forSale":true,"itemId":11087811,"imageLocation":"http://localhost:4000/images/5958665.jpeg"},"13050587":{"sellerId":"bob bigmoney","price":"33","description":"Don't be square, dolphins are cool. ","name":"Ice cubes shaped like dolphins","forSale":true,"itemId":13050587,"imageLocation":"http://localhost:4000/images/7321201.jpg"},"18855112":{"sellerId":"jacques lenormand","price":"9000","description":"Buy your education! That simple!","name":"A priceless education","forSale":true,"itemId":18855112,"imageLocation":"http://localhost:4000/images/4305221.jpeg"},"21751994":{"sellerId":"ksenia","price":"200","description":"furray like Bill Murray","name":"cat","forSale":true,"itemId":21751994,"imageLocation":"http://localhost:4000/images/5541285.jpeg"},"30512367":{"sellerId":"ksenia","price":"4","description":"very cold","name":"ice cubes","forSale":true,"itemId":30512367,"imageLocation":"http://localhost:4000/images/9476570.jpg"},"36065479":{"sellerId":"bob bigmoney","price":"10.00","description":"not for mojitos I swear....","name":"Cane sugar","forSale":true,"itemId":36065479,"imageLocation":"http://localhost:4000/images/1226579.jpeg"},"38097843":{"sellerId":"marie-claire lemonde","price":"20.00","description":"Only used once, must come pick up with your own broom and dust pan.","name":"Confetti!","forSale":true,"itemId":38097843,"imageLocation":"http://localhost:4000/images/880116.jpeg"},"45577702":{"sellerId":"ksenia","price":"420","description":"WHOS A GOOD BOI?","name":"GoodBoi","forSale":true,"itemId":45577702,"imageLocation":"http://localhost:4000/images/7268385.jpeg"},"56199158":{"sellerId":"ksenia","price":"200","description":"Toasted toastie toast toasting toast","name":"Toastie Toast","forSale":true,"itemId":56199158,"imageLocation":"http://localhost:4000/images/7075970.jpg"},"65363143":{"sellerId":"francesca hounds","price":"3.50","description":"get healthy with this home made hummus!","name":"hummus","forSale":true,"itemId":65363143,"imageLocation":"http://localhost:4000/images/4254110.jpeg"},"69821899":{"sellerId":"jacques lenormand","price":"25.00","description":"Look as cool as I do! ","name":"Men's fashion scarf","forSale":true,"itemId":69821899,"imageLocation":"http://localhost:4000/images/5223713.jpeg"},"74363053":{"sellerId":"francesca hounds","price":"1256.95","description":"hand made, traditional gut strings, vintage.","name":"banjo","forSale":true,"itemId":74363053,"imageLocation":"http://localhost:4000/images/6603456.jpeg"},"85692909":{"sellerId":"bob bigmoney","price":"99.99","description":"Webster's Dictionary defines mint as : any of a family (Lamiaceae synonym Labiatae, the mint family) of aromatic plants with a square stem and a 4-lobed ovary which produces four one-seeded nutlets in fruit","name":"Mint","forSale":true,"itemId":85692909,"imageLocation":"http://localhost:4000/images/7526264.jpg"},"99105446":{"sellerId":"bob bigmoney","price":"10000.01","description":"Only the fanciest! ","name":"Fanciest Rum","forSale":true,"itemId":99105446,"imageLocation":"http://localhost:4000/images/2054033.jpeg"}}
+{
+    "9598413": {
+        "sellerId": "marie-claire lemonde",
+        "price": "300.00",
+        "description": "Despite the deceptive name, works for all music genres!",
+        "name": "Disco Ball",
+        "forSale": true,
+        "itemId": 9598413,
+        "imageLocation": "http://localhost:4000/images/2271963.jpeg"
+    },
+    "11087811": {
+        "sellerId": "marie-claire lemonde",
+        "price": "0",
+        "description": "Ever wonder why your house it not a trampoline? ",
+        "name": "Bouncy House",
+        "forSale": true,
+        "itemId": 11087811,
+        "imageLocation": "http://localhost:4000/images/5958665.jpeg"
+    },
+    "13050587": {
+        "sellerId": "bob bigmoney",
+        "price": "33",
+        "description": "Don't be square, dolphins are cool. ",
+        "name": "Ice cubes shaped like dolphins",
+        "forSale": true,
+        "itemId": 13050587,
+        "imageLocation": "http://localhost:4000/images/7321201.jpg"
+    },
+    "18855112": {
+        "sellerId": "jacques lenormand",
+        "price": "9000",
+        "description": "Buy your education! That simple!",
+        "name": "A priceless education",
+        "forSale": true,
+        "itemId": 18855112,
+        "imageLocation": "http://localhost:4000/images/4305221.jpeg"
+    },
+    "21751994": {
+        "sellerId": "ksenia",
+        "price": "200",
+        "description": "furray like Bill Murray",
+        "name": "cat",
+        "forSale": true,
+        "itemId": 21751994,
+        "imageLocation": "http://localhost:4000/images/5541285.jpeg"
+    },
+    "30512367": {
+        "sellerId": "ksenia",
+        "price": "4",
+        "description": "very cold",
+        "name": "ice cubes",
+        "forSale": true,
+        "itemId": 30512367,
+        "imageLocation": "http://localhost:4000/images/9476570.jpg"
+    },
+    "36065479": {
+        "sellerId": "bob bigmoney",
+        "price": "10.00",
+        "description": "not for mojitos I swear....",
+        "name": "Cane sugar",
+        "forSale": true,
+        "itemId": 36065479,
+        "imageLocation": "http://localhost:4000/images/1226579.jpeg"
+    },
+    "38097843": {
+        "sellerId": "marie-claire lemonde",
+        "price": "20.00",
+        "description": "Only used once, must come pick up with your own broom and dust pan.",
+        "name": "Confetti!",
+        "forSale": true,
+        "itemId": 38097843,
+        "imageLocation": "http://localhost:4000/images/880116.jpeg"
+    },
+    "45577702": {
+        "sellerId": "ksenia",
+        "price": "420",
+        "description": "WHOS A GOOD BOI?",
+        "name": "GoodBoi",
+        "forSale": true,
+        "itemId": 45577702,
+        "imageLocation": "http://localhost:4000/images/7268385.jpeg"
+    },
+    "56199158": {
+        "sellerId": "ksenia",
+        "price": "200",
+        "description": "Toasted toastie toast toasting toast",
+        "name": "Toastie Toast",
+        "forSale": true,
+        "itemId": 56199158,
+        "imageLocation": "http://localhost:4000/images/7075970.jpg"
+    },
+    "65363143": {
+        "sellerId": "francesca hounds",
+        "price": "3.50",
+        "description": "get healthy with this home made hummus!",
+        "name": "hummus",
+        "forSale": true,
+        "itemId": 65363143,
+        "imageLocation": "http://localhost:4000/images/4254110.jpeg"
+    },
+    "69821899": {
+        "sellerId": "jacques lenormand",
+        "price": "25.00",
+        "description": "Look as cool as I do! ",
+        "name": "Men's fashion scarf",
+        "forSale": true,
+        "itemId": 69821899,
+        "imageLocation": "http://localhost:4000/images/5223713.jpeg"
+    },
+    "74363053": {
+        "sellerId": "francesca hounds",
+        "price": "1256.95",
+        "description": "hand made, traditional gut strings, vintage.",
+        "name": "banjo",
+        "forSale": true,
+        "itemId": 74363053,
+        "imageLocation": "http://localhost:4000/images/6603456.jpeg"
+    },
+    "85692909": {
+        "sellerId": "bob bigmoney",
+        "price": "99.99",
+        "description": "Webster's Dictionary defines mint as : any of a family (Lamiaceae synonym Labiatae, the mint family) of aromatic plants with a square stem and a 4-lobed ovary which produces four one-seeded nutlets in fruit",
+        "name": "Mint",
+        "forSale": true,
+        "itemId": 85692909,
+        "imageLocation": "http://localhost:4000/images/7526264.jpg"
+    },
+    "99105446": {
+        "sellerId": "bob bigmoney",
+        "price": "10000.01",
+        "description": "Only the fanciest! ",
+        "name": "Fanciest Rum",
+        "forSale": true,
+        "itemId": 99105446,
+        "imageLocation": "http://localhost:4000/images/2054033.jpeg"
+    }
+}
