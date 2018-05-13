@@ -9,7 +9,11 @@ app.use(express.static('public'))
 
 app.use(bodyParser.raw({ type: '*/*', limit: '50mb' }))
 
+<<<<<<< HEAD
 //let sessionsMap = []; // array to store in the sessionIDs to check for cookies
+=======
+let sessionsMap = []; // arra to store in the sessionIDs
+>>>>>>> 9189e6a38ebd291bdd2c66285256e7854c76d357
 
 let sessionInfo = {}; //store session IDs in the sessionInfo class
 
@@ -46,6 +50,7 @@ app.post('/login', (req, res) => {
     let sessionID = Math.floor(Math.random() * 10000000); //generate session ID only at login
     if (info[username] === password) { //checks whether the password for the user matches the entered password
         sessionInfo[sessionID] = username;
+<<<<<<< HEAD
         alibay.initializeUserIfNeeded(username)
         // sessionsMap[sessionID] = username; adding cookies to sessionsMap against the sessionId
         // console.log(req.headers.cookie)
@@ -53,11 +58,22 @@ app.post('/login', (req, res) => {
         //     res.set('Set-Cookie', sessionID); //sending session ID using cookies
         // }
         res.send(JSON.stringify({ sessionID, username }));
+=======
+        alibay.initializeUserIfNeeded(username);
+        sessionsMap[sessionID] = username;
+        console.log(req.headers.cookie)
+        if (req.headers.cookie === "") {
+            res.set('Set-Cookie', sessionID); //sending session ID using cookies
+        }
+        res.send(JSON.stringify({ sessionID, username })); //do we need to send the sessionID if using cookies
+>>>>>>> 9189e6a38ebd291bdd2c66285256e7854c76d357
     }
-    else
+    else {
         res.send(JSON.stringify("failure"));
+    }
 })
 
+<<<<<<< HEAD
 //Aly knows the code!
 // app.get("/checkLoginCookieMethod", (req, res) => {
 //     console.log("ASD")
@@ -73,6 +89,23 @@ app.post('/login', (req, res) => {
 //     }
 //     res.send(JSON.stringify({ status: "notLogged" })) //check for this condition 
 // })
+=======
+app.get("/checkLoginCookieMethod", (req, res) => {
+    console.log("ASD")
+    if (req.headers.cookie) {
+        let sessionID = req.headers.cookie;
+        // you need to create the session map file as an object with session id and put it whenever a user logs in
+        // sessionsMap = [413413125132,131412314312,1331313414]
+        if (sessionsMap[sessionID] !== undefined) {
+            //res success and user information that is normaly sent after login  
+            res.send(JSON.stringify({ sessionID, username: sessionsMap[sessionID] }));
+        }
+        res.send(JSON.stringify({ status: "notLogged" }))
+    }
+    res.send(JSON.stringify({ status: "notLogged" })) //check for this condition 
+})
+
+>>>>>>> 9189e6a38ebd291bdd2c66285256e7854c76d357
 
 app.get('/getItemDetails', (req, res) => {
     let itemId = req.query.itemId
