@@ -6,9 +6,6 @@ let items = JSON.parse(fs.readFileSync('data/items.json'))
 let itemsBought = JSON.parse(fs.readFileSync('data/itemsBought.json'))
 let itemsSold = JSON.parse(fs.readFileSync('data/itemsSold.json'))
 
-
-
-
 /*
 Before implementing the login functionality, use this function to generate a new UID every time.
 */
@@ -26,7 +23,6 @@ function putItemsSold(userId, items) {
     itemsSold[userId] = items
     fs.writeFileSync('data/itemsSold.json', JSON.stringify(itemsSold))
 }
-
 //shows items that that user has bought
 function getItemsBought(userId) {
     return itemsBought[userId];
@@ -128,7 +124,6 @@ function buy(itemId, buyerId) {
     fs.writeFileSync('data/itemsBought.json', JSON.stringify(itemsBought));
     fs.writeFileSync('data/itemsSold.json', JSON.stringify(itemsSold));
     return { success: true }
-
 }
 
 
