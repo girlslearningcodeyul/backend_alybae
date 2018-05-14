@@ -13,7 +13,7 @@
         "price": "0",
         "description": "Ever wonder why your house is not a trampoline? ",
         "name": "Bouncy House",
-        "forSale": true,
+        "forSale": false,
         "itemId": 11087811,
         "imageLocation": "http://localhost:4000/images/5958665.jpeg"
     },
@@ -67,7 +67,7 @@
         "price": "20.00",
         "description": "Only used once, must come pick up with your own broom and dust pan.",
         "name": "Confetti!",
-        "forSale": true,
+        "forSale": false,
         "itemId": 38097843,
         "imageLocation": "http://localhost:4000/images/880116.jpeg"
     },
